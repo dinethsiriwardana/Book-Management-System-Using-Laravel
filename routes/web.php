@@ -3,6 +3,9 @@
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 
+use App\Http\Controllers\ProfilesControllers;
+use App\Http\Controllers\BookControllers;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -22,6 +25,13 @@ Auth::routes();
 Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 
-Route::get('/profile', [App\Http\Controllers\ProfilesControllers::class, 'index'])->name('profile');
-Route::post('/addbook', [App\Http\Controllers\BookControllers::class, 'addbook'])->name('addbook');
+Route::get('/profile', [ProfilesControllers::class, 'index'])->name('profile');
+
+Route::post('/addbook', [BookControllers::class, 'addbook'])->name('addbook');
+
+Route::get('/delete/{id}', [BookControllers::class, 'deletebook'])->name('deletebook');
+
+Route::get('/update/{id}', [BookControllers::class, 'updatebookshow'])->name('updatebookshow');
+
+Route::post('/update/{id}/update', [BookControllers::class, 'updatebook'])->name('updatebook');
 

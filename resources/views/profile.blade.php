@@ -8,7 +8,7 @@
                 <div class="card-header">Profile</div>
 
                 <div class="card-body">
-                    <div class="row">
+                    {{-- <div class="row">
                         <div class="col-2">ID</div>
                         <div class="col">{{Auth::user()->id}}</div>
                     </div>
@@ -19,7 +19,7 @@
                     <div class="row">
                         <div class="col-2">Email</div>
                         <div class="col">{{ Auth::user()->email }}</div>
-                    </div>
+                    </div> --}}
                 </div>
             </div>
         </div>
